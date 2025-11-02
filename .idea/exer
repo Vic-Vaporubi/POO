@@ -90,6 +90,6 @@ public class Main{
         d1.setNumconta(123422);
         d1.abrirConta("CP");
         d1.depositar(200f);
-        System.out.println("Dados da conta \n Saldo R$" +d1.getSaldo());
+        System.out.println("Dados da conta \n Saldo R$" +d1.getSaldo() \n+ "tipo da conta" + d1.getTipo());
     }
 }
