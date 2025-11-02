@@ -83,7 +83,8 @@ class Banco{
         this.saldo -= 30;
     }
 }
-public class Main{
+
+public  class Main{
     public static void main (String[] args){
         Banco d1 = new Banco();
         d1.setDono("João");
@@ -91,5 +92,9 @@ public class Main{
         d1.abrirConta("CP");
         d1.depositar(200f);
         System.out.println("Dados da conta \n Saldo R$" +d1.getSaldo());
+        Carro d2 = new Carro();
+        d2.ligar();
+        d2.acelerar();
+        d2.status();
+        }
     }
-}
