@@ -1,0 +1,95 @@
+class Pessoa{
+    String nome;
+    private int idade;
+    public void setIdade(int i){
+        idade = i;
+    }
+    float altura;
+    void status(){
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("Altura: " + this.altura);
+    }
+    void aniversario(){
+        idade++;
+    }
+}
+class Banco{
+    public int numconta;
+    protected String tipo;
+    private String dono;
+    private float saldo;
+    private boolean status;
+    public int getNumconta(){
+        return this.numconta;
+    }
+    public void setNumconta(int n){
+        this.numconta = n;
+    }
+    public String getTipo(){
+        return this.tipo;
+    }
+    public void setTipo(String t){
+        this.tipo = t;
+    }
+    public String getDono(){
+        return this.dono;
+    }
+    public void setDono(String d){
+        this.dono = d;
+    }
+    public float getSaldo(){
+        return this.saldo;
+    }
+    public void setSaldo(float s){
+        this.saldo = s;
+    }
+    public boolean getStatus(){
+        return this.status;
+    }
+    public void setStatus(boolean st){
+        this.status = st;
+    }
+
+    void sacar(float j){
+        this.saldo -= j;
+    }
+    void depositar(float k){
+        this.saldo += k;
+    }
+    void fecharConta(){
+        if(this.saldo != 0){
+            System.out.println("Não é possível fechar uma conta com saldo, retire o seu saldo para realizar a operação");
+        }
+        else {
+            this.status = false;
+            System.out.println("Operação realizada com sucesso.");
+        }
+    }
+    void abrirConta(String l){
+        if (l == "CP"){
+            this.tipo = "CP";
+            this.saldo = 200;
+            this.status = true;
+        } else if(l == "CC"){
+            this.tipo = "CC";
+            this.saldo = 100;
+            this.status = true;
+        } else {
+            System.out.println("EROO, esse tipo de conta não existe.");
+        }
+    }
+    void pagarconta(){
+        this.saldo -= 30;
+    }
+}
+public class Main{
+    public static void main (String[] args){
+        Banco d1 = new Banco();
+        d1.setDono("João");
+        d1.setNumconta(123422);
+        d1.abrirConta("CP");
+        d1.depositar(200f);
+        System.out.println("Dados da conta \n Saldo R$" +d1.getSaldo());
+    }
+}
